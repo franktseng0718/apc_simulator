@@ -1,36 +1,32 @@
 const defaultStrategy = (moisture, mFactor) => {
-  const period = (moisture * mFactor).toFixed(2);
 
   return {
-    period,
+    period: (moisture * mFactor).toFixed(2),
     temperature: 100,
   };
 };
 
 const sharonStrategy = (thickness, tFactor) => {
-  const temperature = (thickness * tFactor).toFixed(2);
 
   return {
     period: 20,
-    temperature,
+    temperature:(thickness * tFactor).toFixed(2),
   };
 };
 
 const ribeyeStrategy = (thickness, tFactor) => {
-  const temperature = (thickness * tFactor).toFixed(2);
 
   return {
     period: 22,
-    temperature,
+    temperature:(thickness * tFactor).toFixed(2),
   };
 };
 
 const newyorkStrategy = (thickness, tFactor) => {
-  const temperature = (thickness * tFactor).toFixed(2);
 
   return {
     period: 25,
-    temperature,
+    temperature:(thickness * tFactor).toFixed(2),
   };
 };
 
