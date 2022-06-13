@@ -42,6 +42,7 @@ jobs:
     # Build the Docker image
     - name: Build
       run: |-
+        gcloud auth configure-docker
         sudo gcloud builds submit \
           --tag us-central1-docker.pkg.dev/$PROJECT_ID/$IMAGE
         #sudo docker build \
