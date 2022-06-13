@@ -42,10 +42,14 @@ jobs:
     # Build the Docker image
     - name: Build
       run: |-
-        sudo docker build \
-          --tag "gcr.io/us-central1-docker.pkg.dev/$PROJECT_ID/$IMAGE:$GITHUB_SHA" \
+        sudo gcloud builds submit \
+          --tag us-central1-docker.pkg.dev/$PROJECT_ID/$IMAGE:$GITHUB_SHA" \
           --build-arg GITHUB_SHA="$GITHUB_SHA" \
           --build-arg GITHUB_REF="$GITHUB_REF" \
+        #sudo docker build \
+          #--tag "gcr.io/us-central1-docker.pkg.dev/$PROJECT_ID/$IMAGE:$GITHUB_SHA" \
+          #--build-arg GITHUB_SHA="$GITHUB_SHA" \
+          #--build-arg GITHUB_REF="$GITHUB_REF" \
           .
     # Push the Docker image to Google Container Registry
     - name: Publish
