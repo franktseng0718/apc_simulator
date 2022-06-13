@@ -43,7 +43,7 @@ jobs:
     - name: Build
       run: |-
         sudo gcloud builds submit \
-          --tag us-central1-docker.pkg.dev/$PROJECT_ID/$IMAGE:$GITHUB_SHA 
+          --tag us-central1-docker.pkg.dev/$PROJECT_ID/$IMAGE
         #sudo docker build \
           #--tag "gcr.io/us-central1-docker.pkg.dev/$PROJECT_ID/$IMAGE:$GITHUB_SHA" \
           #--build-arg GITHUB_SHA="$GITHUB_SHA" \
