@@ -10,7 +10,7 @@ env:
   GKE_CLUSTER: cluster-1
   GKE_ZONE: us-central1-a
   DEPLOYMENT_NAME: apc-simulator
-  IMAGE: us-central1-docker.pkg.dev/final-project-352014/apc-repo/apc-simulator:latest
+  IMAGE: apc-repo/apc-simulator:latest
 
 jobs:
   setup-build-publish-deploy:
