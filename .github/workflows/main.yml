@@ -36,35 +36,17 @@ jobs:
     - run: |-
         gcloud container clusters get-credentials "$GKE_CLUSTER" --zone "$GKE_ZONE"
     # Build the Docker image
-    #- name: Build
-      #run: |-
+    - name: Build
+      run: |-
         #gcloud auth login
         #gcloud auth configure-docker
         #sudo gcloud builds submit \
           #--tag gcr.io/us-central1-docker.pkg.dev/$PROJECT_ID/$IMAGE --project final-project-352014
-        #sudo docker build \
-          #--tag "gcr.io/us-central1-docker.pkg.dev/$PROJECT_ID/$IMAGE:$GITHUB_SHA" \
-          #--build-arg GITHUB_SHA="$GITHUB_SHA" \
-          #--build-arg GITHUB_REF="$GITHUB_REF" \
-          #.
-          
-      # 安裝依賴
-    - name: gcr.io/cloud-builders/npm
-    - run: |- 
-        install
-
-      # 測試
-    - name: gcr.io/cloud-builders/npm
-    - run: |-
-        test
-
-      # 建置映像
-    - name: gcr.io/cloud-builders/docker
-    - run: |-
         docker build \
-          --tag "gcr.io/$PROJECT_ID/$IMAGE:$GITHUB_SHA" \
+          --tag "gcr.io/us-central1-docker.pkg.dev/$PROJECT_ID/$IMAGE:$GITHUB_SHA" \
           --build-arg GITHUB_SHA="$GITHUB_SHA" \
           --build-arg GITHUB_REF="$GITHUB_REF" \
+          .
       
       
     # Push the Docker image to Google Container Registry
