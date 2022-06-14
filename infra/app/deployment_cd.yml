@@ -16,9 +16,9 @@ spec:
         - name: apc-simulator
           image: gcr.io/PROJECT_ID/IMAGE:TAG
           ports:
-            - containerPort: 3080
+            - containerPort: 3030
           env:
             - name: PORT
-              value: '3080'
+              value: '3030'
             - name: NATS_SERVICE_CONNECTION
-              value: 'nats-server:4220'
+              value: 'nats-server:4222'
