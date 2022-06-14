@@ -49,17 +49,17 @@ jobs:
           #.
           
       # 安裝依賴
-    - name: 'gcr.io/cloud-builders/npm'
+    - name: gcr.io/cloud-builders/npm
     - run: |- 
         install
 
       # 測試
-    - name: 'gcr.io/cloud-builders/npm'
+    - name: gcr.io/cloud-builders/npm
     - run: |-
         test
 
       # 建置映像
-    - name: 'gcr.io/cloud-builders/docker'
+    - name: gcr.io/cloud-builders/docker
     - run: |-
         docker build \
           --tag "gcr.io/$PROJECT_ID/$IMAGE:$GITHUB_SHA" \
