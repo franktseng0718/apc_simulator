@@ -12,6 +12,14 @@ env:
   #IMAGE: apc-repo/apc-simulator:latest
   IMAGE: apc-simulator
 jobs:
+  CI:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install modules
+      run: yarn
+    - name: Run tests
+      run: yarn test
   setup-build-publish-deploy:
     name: Setup, Build, Publish, and Deploy
     runs-on: ubuntu-latest
