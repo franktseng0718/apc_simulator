@@ -16,7 +16,7 @@ spec:
         - name: apc-simulator
           image: apc-simulator
           ports:
-            - containerPort: 3030
+            - containerPort: 3080
           env:
             - name: PORT
               value: '3080'
