@@ -19,6 +19,6 @@ spec:
             - containerPort: 3030
           env:
             - name: PORT
-              value: '3030'
+              value: '3080'
             - name: NATS_SERVICE_CONNECTION
-              value: 'nats-server:4222'
+              value: 'nats-server:4220'
