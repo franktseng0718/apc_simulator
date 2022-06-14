@@ -32,7 +32,13 @@ router.post('/api/v1/process', async (req, res) => {
     let data = null;
     if (type === 'SHARON') {
       data = sharonStrategy(thickness, tFactor);
-    } else {
+    } else if (type === 'RIB_EYE'){
+      data = sharonStrategy(thickness, tFactor);
+    }
+      else if (type === 'NEW_YORK'){
+      data = sharonStrategy(thickness, tFactor);
+    }
+      else{
       data = defaultStrategy(moisture, mFactor);
     }
     axios({
